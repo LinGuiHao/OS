@@ -12,10 +12,10 @@ public class CPUImp implements CPU {
     //cpu时间片
    private int timeSlock = 6;
    //cpu寄存器
-   public static Register cpuRegister;
+   public static Register cpuRegister = new Register();
    //初始化CPU
    public CPUImp(){
-        cpuRegister = new Register();
+
    }
 
     @Override
@@ -63,16 +63,27 @@ public class CPUImp implements CPU {
 
     //寻找中间结果，并操作
     public boolean findIntermediaResult(Map map,short character,short number,boolean isAssigment){
-        for(Map.Entry<Short, Short> entry : cpuRegister.getIntermediaResult().entrySet()) {
-            if(character==entry.getValue()) {
-                if(isAssigment){
-                    entry.setValue(number);
-                }else {
-                    entry.setValue((short)(entry.getValue()+number));
-                }
-                return true;
-            }
-        }
-        return false;
+       if(map.isEmpty()){
+           map.put(character,number);
+           return true;
+       }else{
+           for(Map.Entry<Short, Short> entry : cpuRegister.getIntermediaResult().entrySet()) {
+               if(character==entry.getValue()) {
+                   if(isAssigment){
+                       entry.setValue(number);
+                   }else {
+                       entry.setValue((short) (entry.getValue() + number));
+                   }
+                   return true;
+               }
+           }
+       }
+       return false;
+    }
+    
+    public static void main(String[] args){
+       CPU cpu = new CPUImp();
+        cpuRegister.setIr((short)0b0001111111111111);
+        cpu.cpuController();
     }
 }

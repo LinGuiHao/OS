@@ -11,20 +11,20 @@ public interface ProcessOS {
 	
 	/**
 	 *销毁一个进程
-	 *@param pcb 
+	 *@param destoryPCB
 	 */
-	public void destory(PCB pcb);
+	public void destory(PCB destoryPCB);
 	
 	/**
 	 * 阻塞一个正在运行的进程
-	 * @param pcb
+	 * @param blockPCB
 	 */
-	public void block(PCB pcb);
+	public void block(PCB blockPCB);
 	
 	/**
 	 * 唤醒一个阻塞的进程
 	 * 进程由阻塞态变成就绪态
-	 * @param pcb
+	 * @param awakePCB
 	 */
-	public void awake(PCB pcb);
+	public void awake(PCB awakePCB);
 }

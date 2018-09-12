@@ -1,13 +1,18 @@
 1、Compiler 编译器，一个实体类
 目前只能读取三位字符，应用于磁盘文件加载入内存，先将文本转换为字长16位的指令
 译码规则请查看译码文档
+public byte[] turuToBit(String primitive)；翻译三个字符的字符串语句，返回一个btyes，此byte可以合并为一个short
+public byte[] fileTurnToBits(String fileString)；翻译整个文件的语句，其中不含换行，以三个字符三个字符的读取译码，最后返回一个byte数组
+
+
 2、register寄存器 一个实体类
 用于存储cpu处理进程的一些数据及状态等 
-private short ax;//保存x的值?
-private short psw;//程序状态字??
+private short ax;//保存x的值
+private short psw;//程序状态字
 private short pc;//指向指令所在位置
-private short ir;//?保存执行指令
+private short ir;//保存执行指令
 private Map<Short,Short> intermediaResult = new HashMap<>();//保存中间结果
+
 3、CPU 接口
 主要功能函数
 cpu运算
@@ -15,10 +20,18 @@ public void operationData();
 CPU控制逻辑
 public  void cpuController();
 
-其实现类 CPUImp
+4、CPU实现类 CPUImp
 其中包括 cpu时钟 cpu时间片 cpu寄存器 cpu逻辑控制及其cpu运算器
-因为没有俩数之间的操作 所以目前没写运算器
+
+operationData()方法  因为没有俩数之间的操作 所以目前没写运算器
 cpuController()方法 解析ir指令，并根据ir指令进行相应的数据操作
 
 4、Process 接口
-还没想好如何写，稍后更新。。。
+
+public boolean create(byte[] data); 作用就是将内存整个读取出来存入process中
+
+public void destory(PCB destoryPCB); 销毁一个进程 参数为一个想要销毁进程
+	
+public void block(PCB blockPCB); 阻塞一个进程 参数为一个想要阻塞进程
+
+public void awake(PCB awakePCB); 唤醒一个进程 参数为一个想要唤醒进程

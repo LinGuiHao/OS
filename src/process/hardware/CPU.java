@@ -11,6 +11,7 @@ public interface CPU {
 
     /**
      * CPU控制逻辑
+     * 解析语句并且执行
      */
     public  void cpuController();
 
