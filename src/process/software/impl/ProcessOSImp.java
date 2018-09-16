@@ -10,21 +10,20 @@ public class ProcessOSImp  implements ProcessOS {
 	private Queue<PCB> readyProcess = new LinkedList<>();
 	private Queue<PCB> blockProcess = new LinkedList<>();
 	private Queue<PCB> blankProcess = new LinkedList<>();
-	private PCB runningProcess = new PCB();
 
 	private byte[] data;
 	public ProcessOSImp() {
 	}
 	
 	//新建进程，进程初始化
-	@Override
-	public boolean create(byte[] data) {
-		// TODO Auto-generated method stub
-		//为进程定义一个pcb
 
-		//当有新进程新建的时候更新controller的进程队列  
-		//Controller.readyProcess.add(pcb)
+
+	@Override
+	public boolean create(byte[] data, Queue<PCB> blankProcess, Queue<PCB> readyProcess, Queue<PCB> blockProcess) {
 		this.data = data;
+		this.blockProcess = blockProcess;
+		this.blankProcess = blankProcess;
+		this.readyProcess = readyProcess;
 		return true;
 	}
 
@@ -50,7 +49,6 @@ public class ProcessOSImp  implements ProcessOS {
 	//阻塞进程
 	@Override
 	public void block(PCB blockPCB) {
-		runningProcess = null;
 		blockProcess.add(blockPCB);
 	}
 
@@ -58,7 +56,39 @@ public class ProcessOSImp  implements ProcessOS {
 	@Override
 	public void awake(PCB awakePCB) {
 		blockProcess.remove(awakePCB);
-		blockProcess.add(awakePCB);
+		readyProcess.add(awakePCB);
+		//System.out.println("唤醒进程");
 	}
+
+
+	public Queue<PCB> getReadyProcess() {
+		return readyProcess;
+	}
+
+	public void setReadyProcess(Queue<PCB> readyProcess) {
+		this.readyProcess = readyProcess;
+	}
+
+	public Queue<PCB> getBlockProcess() {
+		return blockProcess;
+	}
+
+	public void setBlockProcess(Queue<PCB> blockProcess) {
+		this.blockProcess = blockProcess;
+	}
+
+
+	public Queue<PCB> getBlankProcess() {
+		return blankProcess;
+	}
+
+	public void setBlankProcess(Queue<PCB> blankProcess) {
+		this.blankProcess = blankProcess;
+	}
+
+	public byte[] getData() {
+		return data;
+	}
+
 
 }

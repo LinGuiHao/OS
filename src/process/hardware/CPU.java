@@ -15,5 +15,10 @@ public interface CPU {
      */
     public  void cpuController();
 
+    /**
+     * cpu操作，执行进程
+     */
+    public void cpu();
+
 
 }

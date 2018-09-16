@@ -2,12 +2,18 @@ package process.software.impl;
 
 import memory.hardware.PCB;
 
+import java.util.Queue;
+
 public interface ProcessOS {
 	/**
-	 * 创建新的进程
-	 * @return boolean
+	 * 创建新的进程,直接从内存中拿到数据块和队列
+	 * @param data 内存数据块
+	 * @param blankProcess 空白队列
+	 * @param readyProcess 就绪队列
+	 * @param blockProcess 阻塞队列
+	 * @return
 	 */
-	public boolean create(byte[] data);
+	public boolean create(byte[] data, Queue<PCB> blankProcess,Queue<PCB> readyProcess,Queue<PCB> blockProcess);
 	
 	/**
 	 *销毁一个进程
