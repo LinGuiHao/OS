@@ -22,7 +22,6 @@ public class ProcessOSImp  implements ProcessOS {
 
 	public static void main(String[] args){
 		MemoryOSImpl memoryOS = new MemoryOSImpl();
-	    ProcessOSImp processOS = new ProcessOSImp(memoryOS);
 	    byte[] datas = new byte[100];
 	    datas[0] = 3;
 	    datas[1] = 0;
@@ -49,25 +48,27 @@ public class ProcessOSImp  implements ProcessOS {
 		datas[22] = 0;
 		datas[23] = (byte) 0b10000000;
 
+	    ProcessOSImp processOS = new ProcessOSImp(datas,memoryOS);
 	    PCB newpcb1 = new PCB();
 		PCB newpcb2 = new PCB();
 	    newpcb1.setPc(0);
 	    newpcb2.setPc(12);
-	    processOS.create(datas,newpcb1);
-	    processOS.create(datas,newpcb2);
+	    processOS.create(newpcb1);
+	    processOS.create(newpcb2);
 	}
-	public ProcessOSImp(MemoryOSImpl memoryOS) {
+	public ProcessOSImp(byte[] data,MemoryOSImpl memoryOS) {
 		readyProcess = new LinkedList<>();
 		blockProcess = new LinkedList<>();
 		blankProcess = new LinkedList<>();
+		this.data = data;
 		cpuOS = new CPUImp();
 		cpuOS.runningCPU(this,memoryOS);
 	}
 
 
 	@Override
-	public boolean create(byte[] data, PCB newPCB) {
-		  this.data = data;
+	public boolean create(PCB newPCB) {
+
 		  readyProcess.add(newPCB);
 		  return true;
 	}

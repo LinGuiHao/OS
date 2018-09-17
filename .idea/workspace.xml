@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="937d77e4-0bcc-4ae5-84ab-7b3e2407f404" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/compiler/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/compiler/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/device1/hardware/Equipment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/device1/hardware/Equipment$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/device1/hardware/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/device1/hardware/Equipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/device1/software/EquipmentOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/device1/software/EquipmentOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/device1/software/EquipmentOSImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/device1/software/EquipmentOSImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/myUtil/Number.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/myUtil/Number.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/process/hardware/CPU.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/process/hardware/CPU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/process/hardware/imp/CPUImp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/process/hardware/imp/CPUImp$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/process/hardware/imp/CPUImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/process/hardware/imp/CPUImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/process/software/impl/ProcessOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/process/software/impl/ProcessOS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/process/software/impl/ProcessOSImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/process/software/impl/ProcessOSImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/device1/hardware/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/device1/hardware/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/device1/software/EquipmentOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/device1/software/EquipmentOS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/device1/software/EquipmentOSImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/device1/software/EquipmentOSImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/hardware/PCB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/hardware/PCB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myUtil/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myUtil/Number.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/hardware/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/hardware/CPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/hardware/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/hardware/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/hardware/imp/CPUImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/hardware/imp/CPUImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/process/software/impl/ProcessOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/software/impl/ProcessOS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/process/software/impl/ProcessOSImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/software/impl/ProcessOSImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/指令译码规则.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/指令译码规则.xlsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,48 +16,49 @@
     <session id="-229386017">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="104" />
+          <entry key="java" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="104" />
+          <entry key="JAVA" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="java" value="9583" />
+          <entry key="java" value="9638" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9583" />
+          <entry key="JAVA" value="9638" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/process/software/impl/ProcessOSImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            <state relative-caret-position="459">
+              <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
               <folding>
                 <element signature="method#destory#0;class#ProcessOSImp#0" />
                 <element signature="method#awake#0;class#ProcessOSImp#0" />
@@ -91,10 +68,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/process/software/impl/ProcessOS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/process/hardware/imp/CPUImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="68" column="71" lean-forward="true" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
+            <state relative-caret-position="1400">
+              <caret line="68" column="71" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
               <folding>
                 <element signature="method#operationData#0;class#CPUImp#0" />
                 <element signature="method#findIntermediaResult#0;class#CPUImp#0" />
@@ -129,7 +115,6 @@
         <option value="$PROJECT_DIR$/src/device/EquipmentOS.java" />
         <option value="$PROJECT_DIR$/src/device1/EquipmentOS.java" />
         <option value="$PROJECT_DIR$/src/device1/software/DMT.java" />
-        <option value="$PROJECT_DIR$/src/process/software/impl/ProcessOS.java" />
         <option value="$PROJECT_DIR$/src/device1/hardware/Equipment.java" />
         <option value="$PROJECT_DIR$/src/device1/software/EquipmentOS.java" />
         <option value="$PROJECT_DIR$/src/device1/software/EquipmentOSImpl.java" />
@@ -140,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/memory/hardware/PCB.java" />
         <option value="$PROJECT_DIR$/src/process/hardware/Register.java" />
         <option value="$PROJECT_DIR$/src/process/hardware/imp/CPUImp.java" />
+        <option value="$PROJECT_DIR$/src/process/software/impl/ProcessOS.java" />
         <option value="$PROJECT_DIR$/src/process/software/impl/ProcessOSImp.java" />
       </list>
     </option>
@@ -158,9 +144,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,6 +202,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,7 +307,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27987897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27987897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -348,34 +334,6 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27987897" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32840723" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32840723" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32840723" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39901477" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -477,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/software/impl/ProcessOS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -543,11 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-25">
           <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -573,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/process/hardware/imp/CPUImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="68" column="71" lean-forward="true" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
+        <state relative-caret-position="1400">
+          <caret line="68" column="71" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="71" />
           <folding>
             <element signature="method#operationData#0;class#CPUImp#0" />
             <element signature="method#findIntermediaResult#0;class#CPUImp#0" />
@@ -583,10 +529,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/process/software/impl/ProcessOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/process/software/impl/ProcessOSImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="459">
+          <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
           <folding>
             <element signature="method#destory#0;class#ProcessOSImp#0" />
             <element signature="method#awake#0;class#ProcessOSImp#0" />

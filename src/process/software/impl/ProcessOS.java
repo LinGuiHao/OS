@@ -11,7 +11,7 @@ public interface ProcessOS {
 	 * @param newPCB 新建进程
 	 * @return
 	 */
-	public boolean create(byte[] data,PCB newPCB);
+	public boolean create(PCB newPCB);
 	
 	/**
 	 *销毁一个进程
