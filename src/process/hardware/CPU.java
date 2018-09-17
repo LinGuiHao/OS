@@ -1,5 +1,8 @@
 package process.hardware;
 
+import memory.software.impl.MemoryOSImpl;
+import process.software.impl.ProcessOSImp;
+
 /**
  * cpu接口
  */
@@ -18,7 +21,7 @@ public interface CPU {
     /**
      * cpu操作，执行进程
      */
-    public void cpu();
+    public void cpu(ProcessOSImp processOS, MemoryOSImpl memoryOS);
 
 
 }

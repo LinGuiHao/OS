@@ -15,6 +15,8 @@ public class Number {
 	public static final int PROCESS_READY = 0;
 	public static final int PROCESS_RUNNING = 1;
 	public static final int PROCESS_BLOCKING =2;
+	public static  final int PROCESS_USE_DEVICE = 3;
+	public static final int PROCESS_FINISH = -4;
 	//中断类型
 	public static final short NO_INTERRUPT = 0;
 	public static final short DEVICE_INTERRUPT = 1;

@@ -12,6 +12,6 @@ public interface EquipmentOS {
      * processOS 进程管理器
      * @return 申请是否成功
      */
-    public boolean apply(PCB usingProcess, char equipmentNum, int useTime, ProcessOSImp processOS);
+    public boolean apply(PCB usingProcess, char equipmentNum, int useTime);
 
 }

@@ -29,7 +29,7 @@ public class Compiler {
 			char number = primitive.charAt(2);
 			ir=(short) (ir + c*Math.pow(2, 8)+number-48);
 		}else if(primitive.matches("end")) {
-			ir = (short)0b1000000000000000;
+			ir = (short)((byte) 0b10000000*Math.pow(2,8)+0);
 		}
 		byte[] bytes = new byte[2];
 		bytes[0] = (byte)(ir/Math.pow(2,8));
@@ -37,6 +37,7 @@ public class Compiler {
 		return bytes;
 	}
 	public byte[] fileTurnToBits(String fileString){
+		fileString.replaceAll("\n","");
 		byte[] bytes = new byte[1024];
 		String threeChar;
 		for(int i = 0;i<fileString.length();i++){

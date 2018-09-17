@@ -35,7 +35,7 @@ public class Equipment {
                 for(int i = 0 ;i < DeviceUseTable.length ;i++){
                     if(DeviceUseTable[i] != null){
                         DeviceUseTable[i].setUseTime(DeviceUseTable[i].getUseTime()-1);
-                        System.out.println("-1s");
+                        System.out.println(equipmentNum+"-1s");
                         if(DeviceUseTable[i].getUseTime() == FINSIH_USE_DEVICE){
                             processOS.awake(DeviceUseTable[i].getUseDeviceProcess());
                             DeviceUseTable[i] = null;

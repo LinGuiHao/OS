@@ -22,7 +22,7 @@ public class PCB {
 	private int length; //length代表这个进程的大小
 
 	//保存中间结果
-	private Map<Integer, Integer> intermediaResult = new HashMap<>();
+	private Map<Short, Short> intermediaResult = new HashMap<>();
 	public PCB() {
 		
 	}
@@ -163,10 +163,10 @@ public class PCB {
 			return false;
 		return true;
 	}
-	public Map<Integer, Integer> getIntermediaResult() {
+	public Map<Short, Short> getIntermediaResult() {
 		return intermediaResult;
 	}
-	public void setIntermediaResult(Map<Integer, Integer> intermediaResult) {
+	public void setIntermediaResult(Map<Short, Short> intermediaResult) {
 		this.intermediaResult = intermediaResult;
 	}
 

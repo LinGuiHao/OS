@@ -1,12 +1,11 @@
 package process.hardware.imp;
 
-import device1.hardware.Equipment;
 import device1.software.EquipmentOSImpl;
 import memory.hardware.PCB;
+import memory.software.impl.MemoryOSImpl;
 import myUtil.Number;
 import process.hardware.CPU;
 import process.hardware.Register;
-import process.software.impl.ProcessOS;
 import process.software.impl.ProcessOSImp;
 
 import java.util.Map;
@@ -20,8 +19,6 @@ public class CPUImp implements CPU {
    private int timeSlock = 6;
    //cpu寄存器
    private Register cpuRegister;
-   //进程管理
-    private ProcessOSImp processOS = new ProcessOSImp();
     //cpu运行进程
     private PCB runningProcess = null;
     //设备管理器
@@ -31,37 +28,68 @@ public class CPUImp implements CPU {
    //初始化CPU
    public CPUImp(){
         cpuRegister = new Register();
-        equipmentOS = new EquipmentOSImpl();
    }
 
+   //启动cpu
+   public void runningCPU(ProcessOSImp processOS,MemoryOSImpl memoryOS){
+       equipmentOS = new EquipmentOSImpl(processOS);
+       cpu(processOS,memoryOS);
+   }
    @Override
-    public void cpu(){
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
+    public void cpu(ProcessOSImp processOS, MemoryOSImpl memoryOS){
+        Timer cputimer = new Timer();
+        cputimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 cpuClock++;
                 if(runningProcess == null){
                     runningProcess = processOS.getReadyProcess().poll();
+                    if(runningProcess!=null){
+                        initCPURegister();
+                        runningProcess.setState(Number.PROCESS_RUNNING);
+                        runningProcess.setPsw(Number.PROCESS_READY);
+                        cpuRegister.setPsw((short) runningProcess.getPsw());
+                    }
                 }else {
                     if(timeSlock == 0){
-                        processOS.block(runningProcess);
+                        //时间片为0的时候阻塞进程，将进程加入到就绪队列
+                        runningProcess.setState(Number.PROCESS_BLOCKING);
+                        processOS.awake(runningProcess);
                         runningProcess = null;
                         timeSlock = 6;
                     }else {
+                        System.out.println("执行");
+                        //当时间片不为0的时候，时间片减少
                         timeSlock--;
+                        //将数据移入cpu寄存器中
                         cpuRegister.setPc((short)runningProcess.getPc());
-                        cpuRegister.setIr(processOS.getData()[cpuRegister.getPc()]);
-                        runningProcess.setPc(runningProcess.getPc()+1);
+                        System.out.println("pc:"+runningProcess.getPc());
+                        cpuRegister.setIr((short)(processOS.getData()[cpuRegister.getPc()+1]*Math.pow(2,8)
+                                + processOS.getData()[cpuRegister.getPc()]));
+                        runningProcess.setPc(runningProcess.getPc()+2);
+                        cpuRegister.setPc((short) runningProcess.getPc());
+                        //进行逻辑译码并执行
                         cpuController();
-                        if(cpuRegister.getPsw()==Number.DEVICE_INTERRUPT){
+                        //通过执行结果执行设备操作
+                        if(cpuRegister.getPsw() == Number.DEVICE_INTERRUPT){
                             //使用设备
+                            //将使用设备信息传给设备管理器
+                            runningProcess.setState(Number.PROCESS_USE_DEVICE);
                             short character = (short) (cpuRegister.getAx()/Math.pow(2, 8) + 'A');
                             int useTime = (int) (cpuRegister.getAx()%Math.pow(2,8));
-                            equipmentOS.apply(runningProcess,(char)character,useTime,processOS);
+                            retainPCBSence();
+                            equipmentOS.apply(runningProcess,(char)character,useTime);
+                            runningProcess = null;
                         }else if(cpuRegister.getPsw() == Number.FINISH_INTERRUPT){
                             //输出结果
+                            runningProcess.setState(Number.PROCESS_FINISH);
+                            //调用界面接口，输出结果
                             result = cpuRegister.getIntermediaResult();
+                            for(Map.Entry<Short, Short> entry : result.entrySet()) {
+                                System.out.println((char) (entry.getKey()+'a')+"  :  "+entry.getValue());
+                            }
+                            memoryOS.collection(runningProcess.getPid());
+                            runningProcess = null;
                         }
                     }
                 }
@@ -78,6 +106,7 @@ public class CPUImp implements CPU {
     @Override
     public void cpuController() {
         short op = (short) (cpuRegister.getIr()/Math.pow(2, 13));
+        System.out.println("op:"+op);
         if(op==0b0) {
             //赋值操作
             cpuRegister.setAx((short) (cpuRegister.getIr()%Math.pow(2, 13)));
@@ -105,9 +134,10 @@ public class CPUImp implements CPU {
             }
         }else if(op==0b011) {
             //占用设备,未完成
-            cpuRegister.setPsw(Number.DEVICE_INTERRUPT);
+            runningProcess.setPsw(Number.DEVICE_INTERRUPT);
+            cpuRegister.setPsw((short) runningProcess.getPsw());
             cpuRegister.setAx((short) (cpuRegister.getIr()%Math.pow(2, 13)));
-        }else if(op==0b100) {
+        }else if(op==-4) {
             //完成
             cpuRegister.setPsw(Number.FINISH_INTERRUPT);
         }
@@ -120,7 +150,7 @@ public class CPUImp implements CPU {
            return true;
        }else{
            for(Map.Entry<Short, Short> entry : cpuRegister.getIntermediaResult().entrySet()) {
-               if(character==entry.getValue()) {
+               if(character==entry.getKey()) {
                    if(isAssigment){
                        entry.setValue(number);
                    }else {
@@ -132,17 +162,28 @@ public class CPUImp implements CPU {
        }
        return false;
     }
-    
-    public static void main(String[] args){
-       CPU cpu = new CPUImp();
-        ProcessOSImp processOSImp = new ProcessOSImp();
+
+    //初始化cpu中的寄存器
+    public void initCPURegister(){
+       cpuRegister.setPsw((short) Number.PROCESS_READY);
+       cpuRegister.setPc((short) runningProcess.getPc());
+       cpuRegister.setIr((short) runningProcess.getIr());
+        cpuRegister.setAx((short) runningProcess.getAx());
+        cpuRegister.setIntermediaResult(runningProcess.getIntermediaResult());
     }
+
+    //保留PCB现场
+    public void retainPCBSence(){
+       runningProcess.setIntermediaResult(cpuRegister.getIntermediaResult());
+       runningProcess.setPc(cpuRegister.getPc());
+       runningProcess.setIr(cpuRegister.getIr());
+       runningProcess.setAx(cpuRegister.getIr());
+    }
+
 
     public int getCpuClock() {
         return cpuClock;
     }
 
-    public void setCpuClock(int cpuClock) {
-        this.cpuClock = cpuClock;
-    }
+
 }

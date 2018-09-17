@@ -9,7 +9,7 @@ public class Register {
 	private short pc;//指向指令所在位置
 	private short ir;//ָ保存执行指令
 	//保存中间结果
-	private Map<Short,Short> intermediaResult = new HashMap<>();
+	private Map<Short,Short> intermediaResult;
 	
 	public short getAx() {
 		return ax;
